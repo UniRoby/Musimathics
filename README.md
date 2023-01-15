@@ -8,8 +8,8 @@ Progetto sviluppato per il corso di Musimathics presso l'università di Salerno
 
 La sequenza di Fibonacci è una serie di numeri in cui ogni numero successivo è la somma dei due numeri precedenti. I numeri della sequenza di Fibonacci hanno straordinarie proprietà matematiche, e possono essere utilizzati anche nella composizione musicale per creare melodie armoniose e ritmi interessanti.
 
-Utilizzando i numeri della sequenza di Fibonacci, associandoli alle note di una scala maggiore, saremo in grado di creare melodie uniche e interessanti.![image](https://user-images.githubusercontent.com/107865801/212548424-f1f64c39-1d1f-4dd7-880b-82a359e657f3.png)
-Nello specifico ho assegnato i numeri da 1 a 8 alle note di una scala maggiore, che viene scelta dall’utente al momento della composizione, ed ho aggiunto lo 0 e il 9 su ogni lato seguendo la naturale estensione della scala.![image](https://user-images.githubusercontent.com/107865801/212548428-fadca74c-2a65-4f7d-a597-084ad43712a5.png)
+Utilizzando i numeri della sequenza di Fibonacci, associandoli alle note di una scala maggiore, saremo in grado di creare melodie uniche e interessanti.
+Nello specifico ho assegnato i numeri da 1 a 8 alle note di una scala maggiore, che viene scelta dall’utente al momento della composizione, ed ho aggiunto lo 0 e il 9 su ogni lato seguendo la naturale estensione della scala.
 ![pianoGMaj](https://user-images.githubusercontent.com/107865801/212548468-475afb16-6d73-4c6a-8140-09bc1bbd0ea4.png)
 
 
