@@ -1,6 +1,7 @@
 # Musimathics
 
-![fib2 logo](https://user-images.githubusercontent.com/107865801/212548397-4967a573-4d92-42ed-aec7-f71f9813a359.jpg)
+![fib](https://user-images.githubusercontent.com/107865801/215279427-dfbd0125-4bc3-4f3b-badd-87d66c2d5897.png)
+
 
 
 
@@ -12,8 +13,13 @@ Utilizzando i numeri della sequenza di Fibonacci, associandoli alle note di una 
 Nello specifico ho assegnato i numeri da 1 a 8 alle note di una scala maggiore, che viene scelta dall’utente al momento della composizione, ed ho aggiunto lo 0 e il 9 su ogni lato seguendo la naturale estensione della scala.
 ![pianoGMaj](https://user-images.githubusercontent.com/107865801/212548468-475afb16-6d73-4c6a-8140-09bc1bbd0ea4.png)
 
+Per avviare l'applicazione bisogna scaricare la cartella compressa FibonacciComposer. Dopo va preso il collegamento "FibonacciComposer.exe -collegamento" e spostarlo in un punto qualsiasi del pc. Ora potete cliccare sul collegamento ed usare l'applicazione.
+
+
 
 Il progetto è stato sviluppato in Python 3
+
+Il codice è disponibile nella cartella src
 
 Per la parte musicale sono state utilizzate le librerie music21 e arvo, le quali vanno installate con i seguenti comandi da terminale
 
