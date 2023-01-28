@@ -9,7 +9,10 @@ from arvo import transformations
 import matplotlib.pyplot as plt
 from PIL import ImageTk, Image
 from tkinter import PhotoImage
+from tkinter import filedialog
 import random
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, 
+NavigationToolbar2Tk)
 
 # variabile di default per l'isorhythm
 durations = tools.durations_to_stream([2, 1, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1])
@@ -365,14 +368,16 @@ def button_saveMidi():
     global ok
 
     if (ok == True):
-        mf = midi.translate.streamToMidiFile(composizione)
-        mf.open('progMusimatica.mid', 'wb')
-        mf.write()
-        mf.close()
+        filepath = filedialog.asksaveasfilename(defaultextension=".mid", filetypes=[("MIDI file", "*.mid")])
+        if filepath:
+            mf = midi.translate.streamToMidiFile(composizione)
+            mf.open(filepath, 'wb')
+            mf.write()
+            mf.close()
 
-        text_msg.insert(tkinter.END, "\n  ")
-        text_msg.insert(tkinter.END,
-                        "\n----------------- File progMusimatica.mid creato con Successo --------------\n  ")
+            text_msg.insert(tkinter.END, "\n  ")
+            text_msg.insert(tkinter.END,
+                            "\n----------------- File salvato con Successo --------------\n  ")
 
     else:
         text_msg.delete("0.0", "end")
@@ -386,7 +391,9 @@ def button_AxAy():
     global composizione
     global ok
     global stream1
-
+    new_window=ctk.CTk()
+    new_window.title("Piano Cartesiano")
+    new_window.wm_iconbitmap("fib.ico")
     if (ok == True):
 
         comp2 = stream.Part()
@@ -400,8 +407,14 @@ def button_AxAy():
         plt.xlabel("Tempo ")
         plt.ylabel("Frequenza (Hz)")
         plt.suptitle("Partitura su Piano Cartesiano")
-        plt.show()
-
+        #plt.show()
+        fig = plt.gcf()
+        canvas = FigureCanvasTkAgg(fig, master=new_window)
+        canvas.draw()
+        canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+        new_window.mainloop()
+        
+         
         text_msg.insert(tkinter.END, "\n  ")
         text_msg.insert(tkinter.END, "\n----------------- Partitura creata con successo --------------\n  ")
 
@@ -410,12 +423,13 @@ def button_AxAy():
         text_msg.insert(tkinter.END, "\n  ")
         text_msg.insert(tkinter.END, "\n----------------- Attenzione --------------\n  ")
         text_msg.insert(tkinter.END, "\nCrea prima una composizione attraverso i tasti sopra")
-
+    
+   
 
 root = ctk.CTk()
 root.geometry("900x1080 ")
 root.title("Fibonacci Composer")
-root.wm_iconbitmap("C:/Users/User/Desktop/Musimatica/fib.ico")
+root.wm_iconbitmap("fib.ico")
 
 
 sidebar_frame = ctk.CTkFrame(root)
@@ -457,7 +471,8 @@ scaling_optionemenu = ctk.CTkOptionMenu(sidebar_frame, values=["80%", "90%", "10
 scaling_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
 
 
-img = ImageTk.PhotoImage(Image.open("C:/Users/User/PycharmProjects/Musimatica/venv/fib.png"))
+img = ImageTk.PhotoImage(Image.open("fib.png"))
+
 label = ctk.CTkLabel(sidebar_frame, image = img, text='')
 label.grid(row=0, column=0, padx=20, pady=(10, 20), sticky="s")
 
