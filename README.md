@@ -37,5 +37,7 @@ Infine è stata utilizzata la libreria matplotlib per una rappresentazione alter
 
 pip install matplotlib
 
+pip install PIL
+
 Per altre informazioni leggere la documentazione e i commenti presenti nel codice.
 
